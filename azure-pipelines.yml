@@ -34,3 +34,11 @@ steps:
     pip install pytest pytest-azurepipelines
     pytest
   displayName: 'pytest'
+
+# Node install
+- task: NodeTool@0
+  displayName: Node install
+  inputs:
+    versionSpec: '6.x' # The version we're installing
+# Write the installed version to the command line
+- script: which node
